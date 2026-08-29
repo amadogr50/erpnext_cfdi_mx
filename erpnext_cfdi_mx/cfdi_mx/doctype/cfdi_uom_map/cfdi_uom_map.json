@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sat_clave",
+  "erpnext_uom",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "sat_clave",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Clave Unidad SAT",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "erpnext_uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM ERPNext",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Descripci\u00f3n"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CFDI MX",
+ "name": "CFDI UOM Map",
+ "autoname": "field:sat_clave",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CFDI Importer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

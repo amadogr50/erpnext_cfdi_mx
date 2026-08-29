@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "clave_prod_serv",
+  "description",
+  "cfdi_unit",
+  "sat_unit_label",
+  "quantity",
+  "unit_value",
+  "amount",
+  "iva_rate",
+  "iva_amount",
+  "isr_rate",
+  "isr_amount",
+  "iva_ret_rate",
+  "iva_ret_amount",
+  "mapping_section",
+  "mapping_status",
+  "rule",
+  "item",
+  "stock_uom",
+  "conversion_factor",
+  "stock_quantity",
+  "expense_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "clave_prod_serv",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Clave Prod/Serv"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Descripci\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cfdi_unit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unidad CFDI"
+  },
+  {
+   "fieldname": "sat_unit_label",
+   "fieldtype": "Data",
+   "label": "Unidad SAT (etiqueta)"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cantidad"
+  },
+  {
+   "fieldname": "unit_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor unitario"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Importe"
+  },
+  {
+   "fieldname": "iva_rate",
+   "fieldtype": "Percent",
+   "label": "Tasa IVA"
+  },
+  {
+   "fieldname": "iva_amount",
+   "fieldtype": "Currency",
+   "label": "IVA"
+  },
+  {
+   "fieldname": "isr_rate",
+   "fieldtype": "Percent",
+   "label": "Retenci\u00f3n ISR %"
+  },
+  {
+   "fieldname": "isr_amount",
+   "fieldtype": "Currency",
+   "label": "ISR retenido"
+  },
+  {
+   "fieldname": "iva_ret_rate",
+   "fieldtype": "Percent",
+   "label": "Retenci\u00f3n IVA %"
+  },
+  {
+   "fieldname": "iva_ret_amount",
+   "fieldtype": "Currency",
+   "label": "IVA retenido"
+  },
+  {
+   "fieldname": "mapping_section",
+   "fieldtype": "Section Break",
+   "label": "Mapeo"
+  },
+  {
+   "default": "Sin Regla",
+   "fieldname": "mapping_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado de mapeo",
+   "options": "Sin Regla\nMapeado\nNo Inventariable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rule",
+   "fieldtype": "Link",
+   "label": "Regla",
+   "options": "CFDI Item Rule",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "UOM stock",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Float",
+   "label": "Factor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cantidad en stock"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_stock_item",
+   "fieldtype": "Check",
+   "label": "Inventariable"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Cuenta de gasto",
+   "options": "Account",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CFDI MX",
+ "name": "CFDI Recibido Item",
+ "naming_rule": "Expression (Old Style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

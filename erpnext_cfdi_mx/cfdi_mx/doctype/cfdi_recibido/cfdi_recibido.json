@@ -1,0 +1,335 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "file_section",
+  "xml_file",
+  "pdf_file",
+  "comprobante_section",
+  "uuid",
+  "version_cfdi",
+  "serie",
+  "folio",
+  "fecha_emision",
+  "fecha_timbrado",
+  "tipo_comprobante",
+  "metodo_pago",
+  "forma_pago",
+  "moneda",
+  "tipo_cambio",
+  "amounts_section",
+  "subtotal",
+  "descuento",
+  "iva_trasladado",
+  "retenciones",
+  "total",
+  "parties_section",
+  "emisor_rfc",
+  "emisor_nombre",
+  "emisor_regimen",
+  "supplier",
+  "receptor_rfc",
+  "receptor_nombre",
+  "uso_cfdi",
+  "status_section",
+  "status",
+  "data_ok",
+  "validation_message",
+  "is_duplicate",
+  "created_docs_section",
+  "purchase_receipt",
+  "purchase_invoice",
+  "payment_entry",
+  "items",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "file_section",
+   "fieldtype": "Section Break",
+   "label": "Archivos"
+  },
+  {
+   "fieldname": "xml_file",
+   "fieldtype": "Attach",
+   "label": "XML del CFDI",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pdf_file",
+   "fieldtype": "Attach",
+   "label": "PDF (opcional)"
+  },
+  {
+   "fieldname": "comprobante_section",
+   "fieldtype": "Section Break",
+   "label": "Comprobante"
+  },
+  {
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UUID",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "version_cfdi",
+   "fieldtype": "Data",
+   "label": "Versi\u00f3n CFDI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "serie",
+   "fieldtype": "Data",
+   "label": "Serie",
+   "read_only": 1
+  },
+  {
+   "fieldname": "folio",
+   "fieldtype": "Data",
+   "label": "Folio",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fecha_emision",
+   "fieldtype": "Datetime",
+   "label": "Fecha de emisi\u00f3n",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fecha_timbrado",
+   "fieldtype": "Datetime",
+   "label": "Fecha de timbrado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tipo_comprobante",
+   "fieldtype": "Data",
+   "label": "Tipo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "metodo_pago",
+   "fieldtype": "Data",
+   "label": "M\u00e9todo de pago",
+   "read_only": 1
+  },
+  {
+   "fieldname": "forma_pago",
+   "fieldtype": "Data",
+   "label": "Forma de pago",
+   "read_only": 1
+  },
+  {
+   "fieldname": "moneda",
+   "fieldtype": "Data",
+   "default": "MXN",
+   "label": "Moneda",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "tipo_cambio",
+   "fieldtype": "Float",
+   "label": "Tipo de cambio",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amounts_section",
+   "fieldtype": "Section Break",
+   "label": "Montos"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "descuento",
+   "fieldtype": "Currency",
+   "label": "Descuento",
+   "read_only": 1
+  },
+  {
+   "fieldname": "iva_trasladado",
+   "fieldtype": "Currency",
+   "label": "IVA trasladado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "retenciones",
+   "fieldtype": "Currency",
+   "label": "Retenciones",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "parties_section",
+   "fieldtype": "Section Break",
+   "label": "Emisor / Receptor"
+  },
+  {
+   "fieldname": "emisor_rfc",
+   "fieldtype": "Data",
+   "label": "RFC emisor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "emisor_nombre",
+   "fieldtype": "Data",
+   "label": "Emisor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "emisor_regimen",
+   "fieldtype": "Data",
+   "label": "R\u00e9gimen fiscal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Proveedor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "receptor_rfc",
+   "fieldtype": "Data",
+   "label": "RFC receptor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receptor_nombre",
+   "fieldtype": "Data",
+   "label": "Receptor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uso_cfdi",
+   "fieldtype": "Data",
+   "label": "Uso CFDI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Estado"
+  },
+  {
+   "default": "Borrador",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Borrador\nEn Revisi\u00f3n\nListo para Verificar\nRegistrado\nError",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "data_ok",
+   "fieldtype": "Check",
+   "label": "Datos v\u00e1lidos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "validation_message",
+   "fieldtype": "Text",
+   "label": "Mensaje de validaci\u00f3n",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_duplicate",
+   "fieldtype": "Check",
+   "label": "Duplicado (UUID ya registrado)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_docs_section",
+   "fieldtype": "Section Break",
+   "label": "Documentos creados"
+  },
+  {
+   "fieldname": "purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Purchase Receipt",
+   "options": "Purchase Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Conceptos",
+   "options": "CFDI Recibido Item"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CFDI Recibido",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CFDI MX",
+ "name": "CFDI Recibido",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CFDI Importer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

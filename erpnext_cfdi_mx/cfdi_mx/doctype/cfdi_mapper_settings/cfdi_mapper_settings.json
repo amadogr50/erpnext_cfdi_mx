@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-08-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "default_warehouse",
+  "receive_stock_by_default",
+  "section_tax",
+  "iva_acreditable_account",
+  "isr_retention_account",
+  "iva_retention_account",
+  "configured_tax_templates",
+  "section_payment",
+  "use_bridge_account",
+  "bridge_account",
+  "payment_accounts",
+  "section_expense",
+  "default_expense_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Compa\u00f1\u00eda",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Almac\u00e9n por defecto (recepci\u00f3n)",
+   "options": "Warehouse"
+  },
+  {
+   "default": "1",
+   "fieldname": "receive_stock_by_default",
+   "fieldtype": "Check",
+   "label": "Recibir mercanc\u00eda por defecto"
+  },
+  {
+   "fieldname": "section_tax",
+   "fieldtype": "Section Break",
+   "label": "Impuestos (setup fiscal)"
+  },
+  {
+   "fieldname": "iva_acreditable_account",
+   "fieldtype": "Link",
+   "label": "Cuenta IVA acreditable",
+   "options": "Account"
+  },
+  {
+   "fieldname": "isr_retention_account",
+   "fieldtype": "Link",
+   "label": "Cuenta ISR retenido",
+   "options": "Account"
+  },
+  {
+   "fieldname": "iva_retention_account",
+   "fieldtype": "Link",
+   "label": "Cuenta IVA retenido",
+   "options": "Account"
+  },
+  {
+   "fieldname": "configured_tax_templates",
+   "fieldtype": "Small Text",
+   "label": "Plantillas fiscales configuradas",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_payment",
+   "fieldtype": "Section Break",
+   "label": "Pagos"
+  },
+  {
+   "default": "1",
+   "fieldname": "use_bridge_account",
+   "fieldtype": "Check",
+   "label": "Usar cuenta puente de pago"
+  },
+  {
+   "fieldname": "bridge_account",
+   "fieldtype": "Link",
+   "label": "Cuenta puente (por conciliar)",
+   "options": "Account"
+  },
+  {
+   "fieldname": "payment_accounts",
+   "fieldtype": "Table",
+   "label": "Cuentas de pago por proveedor",
+   "options": "CFDI Payment Account"
+  },
+  {
+   "fieldname": "section_expense",
+   "fieldtype": "Section Break",
+   "label": "Gastos"
+  },
+  {
+   "fieldname": "default_expense_account",
+   "fieldtype": "Link",
+   "label": "Cuenta de gasto por defecto",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-19 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CFDI MX",
+ "name": "CFDI Mapper Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CFDI Importer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
