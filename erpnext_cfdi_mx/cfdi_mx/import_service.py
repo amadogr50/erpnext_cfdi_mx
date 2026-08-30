@@ -314,11 +314,19 @@ def confirm_and_register(cfdi_name: str, receive_stock: bool = True) -> dict:
 def _purchase_uom(r) -> str:
 	"""UOM used on the purchase-side line (qty is the CFDI's selling unit).
 
-	Prefers the CFDI's SAT unit label (e.g. 'Paquete'), creating the UOM
-	master row when missing; falls back to the stock UOM only when the
-	conversion factor is 1 (qty is already in stock units).
+	Resolution order:
+	  1. CFDI UOM Map: the SAT clave (e.g. 'H87') maps to an existing ERPNext
+	     UOM (seed these for the units you want to reuse in stock).
+	  2. The CFDI's SAT unit label (e.g. 'Paquete'), creating the UOM master
+	     row when missing.
+	Only when the conversion factor is 1 (qty is already in stock units) it
+	falls back to the stock UOM directly.
 	"""
 	if (r.conversion_factor or 1.0) != 1.0:
+		clave = getattr(r, "cfdi_unit", None) or ""
+		mapped = frappe.db.get_value("CFDI UOM Map", {"sat_clave": clave}, "erpnext_uom") if clave else None
+		if mapped:
+			return mapped
 		for cand in (getattr(r, "sat_unit_label", None), getattr(r, "cfdi_unit", None)):
 			if cand:
 				if not frappe.db.exists("UOM", cand):

@@ -20,7 +20,7 @@
 Un módulo para [Frappe/ERPNext](https://erpnext.com) que convierte un **CFDI 4.0 de compras** en los documentos contables de ERPNext con un clic:
 
 ```
-XML del proveedor (Costco, La Alpina, etc.)
+XML del proveedor
         │
         ▼
 ┌───────────────────┐
@@ -76,6 +76,13 @@ Reinicia los procesos del sitio (`restart`) para que los workers tomen el nuevo 
 
 > El CFDI queda bloqueado como **Registrado**; cada UUID solo puede importarse una vez.
 
+## Configuración inicial
+
+1. Instala el módulo y crea el rol `CFDI Importer` (se concede a Administrator al instalar).
+2. En `CFDI Mapper Settings`: compañía, almacén de recepción, cuenta puente de pagos, cuenta de gasto por defecto.
+3. Ejecuta `setup_tax` (desde el módulo) para crear las plantillas de impuestos MX (`MX Compra IVA 16%`, `MX Compra Sin IVA`, retenciones, e item templates IVA 16%/0%) contra tus cuentas de impuestos.
+4. Si usas conversiones de unidad, registra las claves SAT en `CFDI UOM Map` para que la compra reutilice tus UOMs existentes (p. ej. `H87 → Unidades`, `KGM → Kg`, `XPK → Paquete`). `_purchase_uom` consulta este mapa antes de crear una UOM nueva por etiqueta.
+
 ## Cómo funciona por dentro
 
 | Módulo | Responsabilidad |
@@ -107,7 +114,3 @@ El E2E crea una empresa mexicana mínima, importa los XML reales, mapea todo, re
 ## Licencia
 
 MIT — haz lo que quieras, con gusto.
-
----
-
-*Desarrollado originalmente para las compras reales de [Black Brûlée](https://blackbrulee.com) — postres de autor y mixología en Guadalajara, México. 🖤*
