@@ -392,6 +392,8 @@ def _create_purchase_invoice(doc, lines, settings) -> str:
 	pi.remarks = pi.remark
 	pi.is_return = 0
 	pi.update_stock = 0  # stock is recorded by the Purchase Receipt
+	# The CFDI total is exact to the cent: never round the payable to whole pesos.
+	pi.disable_rounded_total = 1
 	# CFDI discount is header-level. ERPNext's header discount re-distributes per
 	# line with rounding (can drift cents) — instead we fold the discount into
 	# the unit rates so net_total/grand_total match the XML exactly.
